@@ -1,7 +1,8 @@
 BBBadgeBarButtonItem
 ==============
 
-<p>Create a BarButtonItem with a badge on top. Easily customizable.</p>
+<p>Create a BarButtonItem with a badge on top. Easily customizable.
+Your BarButtonItem can be any custom view you wish for. The badge on top can display any number or string of any size or length.<p>
 
 <img alt="ScreenShot BarButtonItem" src="https://github.com/TanguyAladenise/BBBadgeBarButtonItem/blob/master/screenshot.png?raw=true" width="320px"/>
 
@@ -10,13 +11,13 @@ How To Get Started
 ------------------
 
 It's quite easy, just add "BBBadgeBarButtonItem.h" and "BBBadgeBarButtonItem.m" into your xcodeproject. 
-Don't forget to import it wherever you need them :
+Don't forget to import the header file wherever you need it :
 
 ``` objective-c
 #import "BBBadgeBarButtonItem.h"
 ```
 
-Then you only need to instantiate your beautiful BBBadgeBarButtonItem and add it to your navigation bar
+Then, you only need to instantiate your beautiful BBBadgeBarButtonItem and add it to your navigation bar :
 
 ``` objective-c
 UIButton *customButton = [[UIButton alloc] init];
@@ -31,15 +32,16 @@ barButton.badgeValue = @"1";
 self.navigationItem.leftBarButtonItem = barButton;
 ```
 
-If you want your BarButtonItem to handle touch event and click, use a UIButton as customView
+If you want your BarButtonItem to handle touch event and click, use a UIButton as customView.
+The icon or text displayed by the BarButtonItem is your custom view.
 
 
 Usefull properties
 ---------------
 
 Take a look at BBBadgeBarButtonItem.h to see how easily and quickly you can customize the badge.
+Remember that each time you change one of these value, the badge will directly be refresh to handle your styling preferences.
 
-<p>Manually change menu focus on item, with animation or not:</p>
 ``` objective-c
 // Each time you change one of properties, the badge will refresh with your changes
 
@@ -61,6 +63,7 @@ What else ?
 The class is compatible with iOS >= 6.0.
 
 There is a little demo project to help you if you need ;)
+
 
 More
 ----
