@@ -493,6 +493,7 @@
 				5EC4E6A318A55C5300E06C09 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5EC4E6A418A55C5300E06C09 /* Build configuration list for PBXNativeTarget "BBBadgeBarButtonItemTests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +502,7 @@
 				5EC4E6A618A55C5300E06C09 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

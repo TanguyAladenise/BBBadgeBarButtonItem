@@ -9,9 +9,9 @@
 #import "BBBadgeBarButtonItem.h"
 
 // Set a padding for the badge
-static int const BBBadgeMargin = 6;
+static int const BBBadgeMargin = 4;
 // Avoid badge to small
-static int const BBMinSize = 10;
+static int const BBMinSize = 8;
 // Default offset for the badge
 
 // Change things here if your picto doesn't fit this settings
@@ -29,7 +29,7 @@ static int const BBoriginY = -9;
 @implementation BBBadgeBarButtonItem
 
 
-#pragma mark - Init methods 
+#pragma mark - Init methods
 
 - (BBBadgeBarButtonItem *)initWithCustomUIButton:(UIButton *)customButton
 {
@@ -49,6 +49,7 @@ static int const BBoriginY = -9;
     self.badgeTextColor = [UIColor whiteColor];
     self.badgeFont      = [UIFont fontWithName:@"Helvetica" size:12];
     self.shouldHideBadgeAtZero = YES;
+    self.shouldAnimateBadge = YES;
     self.badgeValue = @"0";
 }
 
@@ -66,6 +67,17 @@ static int const BBoriginY = -9;
 // Handle the badge changing value
 - (void)updateBadgeValue
 {
+    
+    // Bounce animation on badge if value changed and if animation authorized
+    if (self.shouldAnimateBadge && ![self.badge.text isEqualToString:self.badgeValue]) {
+        CABasicAnimation * animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+        [animation setFromValue:[NSNumber numberWithFloat:1.5]];
+        [animation setToValue:[NSNumber numberWithFloat:1]];
+        [animation setDuration:.5];
+        [animation setTimingFunction:[CAMediaTimingFunction functionWithControlPoints:.4 :1.3 :1 :1]];
+        [self.badge.layer addAnimation:animation forKey:@"bounceAnimation"];
+    }
+    
     // Set the new value
     self.badge.text = self.badgeValue;
     
@@ -91,6 +103,7 @@ static int const BBoriginY = -9;
         self.badge.frame = CGRectMake(BBoriginX, BBoriginY, minWidth + BBBadgeMargin, minHeight + BBBadgeMargin);
         self.badge.layer.cornerRadius   = (minHeight + BBBadgeMargin) / 2;
     }];
+    
 }
 
 - (UILabel *)duplicateLabel:(UILabel *)labelToCopy
@@ -108,12 +121,12 @@ static int const BBoriginY = -9;
 {
     // Set new value
     _badgeValue = badgeValue;
-
+    
     // When changing the badge value check if we need to remove the badge
     if ([badgeValue isEqualToString:@"0"] && self.shouldHideBadgeAtZero) {
         [self.badge removeFromSuperview];
         self.badge = nil;
-
+        
         return;
     }
     // Otwhersise check if badge already exists

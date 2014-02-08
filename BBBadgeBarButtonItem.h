@@ -20,8 +20,11 @@
 @property (nonatomic) UIColor *badgeTextColor;
 // Badge font
 @property (nonatomic) UIFont *badgeFont;
+
 // In case of numbers, remove the badge when reaching zero
 @property BOOL shouldHideBadgeAtZero;
+// Badge has a bounce animation when value changes
+@property BOOL shouldAnimateBadge;
 
 - (BBBadgeBarButtonItem *)initWithCustomUIButton:(UIButton *)customButton;
 
