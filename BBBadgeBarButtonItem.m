@@ -102,6 +102,7 @@ static int const BBoriginY = -9;
     [UIView animateWithDuration:0.2 animations:^{
         self.badge.frame = CGRectMake(BBoriginX, BBoriginY, minWidth + BBBadgeMargin, minHeight + BBBadgeMargin);
         self.badge.layer.cornerRadius   = (minHeight + BBBadgeMargin) / 2;
+        self.badge.layer.masksToBounds = YES;
     }];
     
 }
