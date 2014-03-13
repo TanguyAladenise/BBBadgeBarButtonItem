@@ -41,13 +41,12 @@ static int const BBoriginY = -9;
     return self;
 }
 
-
 - (void)initializer
 {
     // Default design initialization
     self.badgeBGColor   = [UIColor redColor];
     self.badgeTextColor = [UIColor whiteColor];
-    self.badgeFont      = [UIFont fontWithName:@"Helvetica" size:12];
+    self.badgeFont      = [UIFont systemFontOfSize:12.0];
     self.shouldHideBadgeAtZero = YES;
     self.shouldAnimateBadge = YES;
     self.badgeValue = @"0";
