@@ -29,7 +29,7 @@
     // Then create and add our custom BBBadgeBarButtonItem
     BBBadgeBarButtonItem *barButton = [[BBBadgeBarButtonItem alloc] initWithCustomUIButton:customButton];
     // Set a value for the badge
-    barButton.badgeValue = @"1";
+    barButton.badgeValue = @"2";
 
     // Add it as the leftBarButtonItem of the navigation bar
     self.navigationItem.leftBarButtonItem = barButton;

@@ -1,6 +1,5 @@
 //
 //  BBBadgeBarButtonItem.h
-//  Riverie
 //
 //  Created by Tanguy Aladenise on 07/02/14.
 //  Copyright (c) 2014 Riverie, Inc. All rights reserved.
@@ -10,7 +9,7 @@
 
 @interface BBBadgeBarButtonItem : UIBarButtonItem
 
-// Each time you change one of properties, the badge will refresh with your changes
+// Each time you change one of the properties, the badge will refresh with your changes
 
 // Badge value to be display
 @property (nonatomic) NSString *badgeValue;
