@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4FD6924B18D15E32002B9568 /* BBBadgeBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD6924A18D15E32002B9568 /* BBBadgeBarButtonItem.m */; };
 		5EC4E67318A55C5300E06C09 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC4E67218A55C5300E06C09 /* Foundation.framework */; };
 		5EC4E67518A55C5300E06C09 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC4E67418A55C5300E06C09 /* CoreGraphics.framework */; };
 		5EC4E67718A55C5300E06C09 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC4E67618A55C5300E06C09 /* UIKit.framework */; };
@@ -16,27 +17,13 @@
 		5EC4E68618A55C5300E06C09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EC4E68418A55C5300E06C09 /* Main.storyboard */; };
 		5EC4E68918A55C5300E06C09 /* BBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC4E68818A55C5300E06C09 /* BBViewController.m */; };
 		5EC4E68B18A55C5300E06C09 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EC4E68A18A55C5300E06C09 /* Images.xcassets */; };
-		5EC4E69218A55C5300E06C09 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC4E69118A55C5300E06C09 /* XCTest.framework */; };
-		5EC4E69318A55C5300E06C09 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC4E67218A55C5300E06C09 /* Foundation.framework */; };
-		5EC4E69418A55C5300E06C09 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC4E67618A55C5300E06C09 /* UIKit.framework */; };
-		5EC4E69C18A55C5300E06C09 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EC4E69A18A55C5300E06C09 /* InfoPlist.strings */; };
-		5EC4E69E18A55C5300E06C09 /* BBBadgeBarButtonItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC4E69D18A55C5300E06C09 /* BBBadgeBarButtonItemTests.m */; };
 		5EC4E6AD18A55E9F00E06C09 /* ico-to-do-list.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EC4E6AB18A55E9F00E06C09 /* ico-to-do-list.png */; };
 		5EC4E6AE18A55E9F00E06C09 /* ico-to-do-list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EC4E6AC18A55E9F00E06C09 /* ico-to-do-list@2x.png */; };
-		5EC4E6B118A55EB600E06C09 /* BBBadgeBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC4E6B018A55EB600E06C09 /* BBBadgeBarButtonItem.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		5EC4E69518A55C5300E06C09 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5EC4E66718A55C5300E06C09 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5EC4E66E18A55C5300E06C09;
-			remoteInfo = BBBadgeBarButtonItem;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		4FD6924918D15E32002B9568 /* BBBadgeBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBadgeBarButtonItem.h; sourceTree = "<group>"; };
+		4FD6924A18D15E32002B9568 /* BBBadgeBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBadgeBarButtonItem.m; sourceTree = "<group>"; };
 		5EC4E66F18A55C5300E06C09 /* BBBadgeBarButtonItem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBBadgeBarButtonItem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EC4E67218A55C5300E06C09 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5EC4E67418A55C5300E06C09 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -51,15 +38,9 @@
 		5EC4E68718A55C5300E06C09 /* BBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBViewController.h; sourceTree = "<group>"; };
 		5EC4E68818A55C5300E06C09 /* BBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBViewController.m; sourceTree = "<group>"; };
 		5EC4E68A18A55C5300E06C09 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		5EC4E69018A55C5300E06C09 /* BBBadgeBarButtonItemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BBBadgeBarButtonItemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EC4E69118A55C5300E06C09 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		5EC4E69918A55C5300E06C09 /* BBBadgeBarButtonItemTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BBBadgeBarButtonItemTests-Info.plist"; sourceTree = "<group>"; };
-		5EC4E69B18A55C5300E06C09 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5EC4E69D18A55C5300E06C09 /* BBBadgeBarButtonItemTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBBadgeBarButtonItemTests.m; sourceTree = "<group>"; };
 		5EC4E6AB18A55E9F00E06C09 /* ico-to-do-list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico-to-do-list.png"; sourceTree = "<group>"; };
 		5EC4E6AC18A55E9F00E06C09 /* ico-to-do-list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico-to-do-list@2x.png"; sourceTree = "<group>"; };
-		5EC4E6AF18A55EB600E06C09 /* BBBadgeBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBadgeBarButtonItem.h; sourceTree = "<group>"; };
-		5EC4E6B018A55EB600E06C09 /* BBBadgeBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBadgeBarButtonItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,24 +54,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5EC4E68D18A55C5300E06C09 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5EC4E69218A55C5300E06C09 /* XCTest.framework in Frameworks */,
-				5EC4E69418A55C5300E06C09 /* UIKit.framework in Frameworks */,
-				5EC4E69318A55C5300E06C09 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4FD6924818D15E32002B9568 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				4FD6924918D15E32002B9568 /* BBBadgeBarButtonItem.h */,
+				4FD6924A18D15E32002B9568 /* BBBadgeBarButtonItem.m */,
+			);
+			name = Source;
+			path = ../Source;
+			sourceTree = "<group>";
+		};
 		5EC4E66618A55C5300E06C09 = {
 			isa = PBXGroup;
 			children = (
-				5EC4E67818A55C5300E06C09 /* BBBadgeBarButtonItem */,
-				5EC4E69718A55C5300E06C09 /* BBBadgeBarButtonItemTests */,
+				5EC4E67818A55C5300E06C09 /* Sample */,
+				4FD6924818D15E32002B9568 /* Source */,
 				5EC4E67118A55C5300E06C09 /* Frameworks */,
 				5EC4E67018A55C5300E06C09 /* Products */,
 			);
@@ -100,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				5EC4E66F18A55C5300E06C09 /* BBBadgeBarButtonItem.app */,
-				5EC4E69018A55C5300E06C09 /* BBBadgeBarButtonItemTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,7 +96,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5EC4E67818A55C5300E06C09 /* BBBadgeBarButtonItem */ = {
+		5EC4E67818A55C5300E06C09 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
 				5EC4E6B318A55EE600E06C09 /* Resources */,
@@ -125,10 +105,10 @@
 				5EC4E68418A55C5300E06C09 /* Main.storyboard */,
 				5EC4E68718A55C5300E06C09 /* BBViewController.h */,
 				5EC4E68818A55C5300E06C09 /* BBViewController.m */,
-				5EC4E6B218A55ED600E06C09 /* BBBadgeBarButtonItem */,
 				5EC4E68A18A55C5300E06C09 /* Images.xcassets */,
 				5EC4E67918A55C5300E06C09 /* Supporting Files */,
 			);
+			name = Sample;
 			path = BBBadgeBarButtonItem;
 			sourceTree = "<group>";
 		};
@@ -141,33 +121,6 @@
 				5EC4E68018A55C5300E06C09 /* BBBadgeBarButtonItem-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		5EC4E69718A55C5300E06C09 /* BBBadgeBarButtonItemTests */ = {
-			isa = PBXGroup;
-			children = (
-				5EC4E69D18A55C5300E06C09 /* BBBadgeBarButtonItemTests.m */,
-				5EC4E69818A55C5300E06C09 /* Supporting Files */,
-			);
-			path = BBBadgeBarButtonItemTests;
-			sourceTree = "<group>";
-		};
-		5EC4E69818A55C5300E06C09 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				5EC4E69918A55C5300E06C09 /* BBBadgeBarButtonItemTests-Info.plist */,
-				5EC4E69A18A55C5300E06C09 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		5EC4E6B218A55ED600E06C09 /* BBBadgeBarButtonItem */ = {
-			isa = PBXGroup;
-			children = (
-				5EC4E6AF18A55EB600E06C09 /* BBBadgeBarButtonItem.h */,
-				5EC4E6B018A55EB600E06C09 /* BBBadgeBarButtonItem.m */,
-			);
-			name = BBBadgeBarButtonItem;
 			sourceTree = "<group>";
 		};
 		5EC4E6B318A55EE600E06C09 /* Resources */ = {
@@ -199,24 +152,6 @@
 			productReference = 5EC4E66F18A55C5300E06C09 /* BBBadgeBarButtonItem.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5EC4E68F18A55C5300E06C09 /* BBBadgeBarButtonItemTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5EC4E6A418A55C5300E06C09 /* Build configuration list for PBXNativeTarget "BBBadgeBarButtonItemTests" */;
-			buildPhases = (
-				5EC4E68C18A55C5300E06C09 /* Sources */,
-				5EC4E68D18A55C5300E06C09 /* Frameworks */,
-				5EC4E68E18A55C5300E06C09 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5EC4E69618A55C5300E06C09 /* PBXTargetDependency */,
-			);
-			name = BBBadgeBarButtonItemTests;
-			productName = BBBadgeBarButtonItemTests;
-			productReference = 5EC4E69018A55C5300E06C09 /* BBBadgeBarButtonItemTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -224,13 +159,8 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = BB;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = aladenise;
-				TargetAttributes = {
-					5EC4E68F18A55C5300E06C09 = {
-						TestTargetID = 5EC4E66E18A55C5300E06C09;
-					};
-				};
 			};
 			buildConfigurationList = 5EC4E66A18A55C5300E06C09 /* Build configuration list for PBXProject "BBBadgeBarButtonItem" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -246,7 +176,6 @@
 			projectRoot = "";
 			targets = (
 				5EC4E66E18A55C5300E06C09 /* BBBadgeBarButtonItem */,
-				5EC4E68F18A55C5300E06C09 /* BBBadgeBarButtonItemTests */,
 			);
 		};
 /* End PBXProject section */
@@ -264,14 +193,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5EC4E68E18A55C5300E06C09 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5EC4E69C18A55C5300E06C09 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -279,30 +200,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FD6924B18D15E32002B9568 /* BBBadgeBarButtonItem.m in Sources */,
 				5EC4E68918A55C5300E06C09 /* BBViewController.m in Sources */,
 				5EC4E68318A55C5300E06C09 /* BBAppDelegate.m in Sources */,
-				5EC4E6B118A55EB600E06C09 /* BBBadgeBarButtonItem.m in Sources */,
 				5EC4E67F18A55C5300E06C09 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5EC4E68C18A55C5300E06C09 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5EC4E69E18A55C5300E06C09 /* BBBadgeBarButtonItemTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		5EC4E69618A55C5300E06C09 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5EC4E66E18A55C5300E06C09 /* BBBadgeBarButtonItem */;
-			targetProxy = 5EC4E69518A55C5300E06C09 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5EC4E67B18A55C5300E06C09 /* InfoPlist.strings */ = {
@@ -321,14 +226,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		5EC4E69A18A55C5300E06C09 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5EC4E69B18A55C5300E06C09 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -336,7 +233,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -375,7 +271,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -432,48 +327,6 @@
 			};
 			name = Release;
 		};
-		5EC4E6A518A55C5300E06C09 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BBBadgeBarButtonItem.app/BBBadgeBarButtonItem";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BBBadgeBarButtonItem/BBBadgeBarButtonItem-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "BBBadgeBarButtonItemTests/BBBadgeBarButtonItemTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		5EC4E6A618A55C5300E06C09 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BBBadgeBarButtonItem.app/BBBadgeBarButtonItem";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BBBadgeBarButtonItem/BBBadgeBarButtonItem-Prefix.pch";
-				INFOPLIST_FILE = "BBBadgeBarButtonItemTests/BBBadgeBarButtonItemTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -491,15 +344,6 @@
 			buildConfigurations = (
 				5EC4E6A218A55C5300E06C09 /* Debug */,
 				5EC4E6A318A55C5300E06C09 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5EC4E6A418A55C5300E06C09 /* Build configuration list for PBXNativeTarget "BBBadgeBarButtonItemTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5EC4E6A518A55C5300E06C09 /* Debug */,
-				5EC4E6A618A55C5300E06C09 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
