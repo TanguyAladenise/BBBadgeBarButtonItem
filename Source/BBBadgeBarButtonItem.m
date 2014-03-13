@@ -31,7 +31,7 @@ static int const BBoriginY = -9;
 
 #pragma mark - Init methods
 
-- (BBBadgeBarButtonItem *)initWithCustomUIButton:(UIButton *)customButton
+- (BBBadgeBarButtonItem *)initWithCustomButton:(UIButton *)customButton
 {
     self = [self initWithCustomView:customButton];
     if (self) {

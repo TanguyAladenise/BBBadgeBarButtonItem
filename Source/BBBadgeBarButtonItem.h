@@ -26,6 +26,6 @@
 // Badge has a bounce animation when value changes
 @property BOOL shouldAnimateBadge;
 
-- (BBBadgeBarButtonItem *)initWithCustomUIButton:(UIButton *)customButton;
+- (BBBadgeBarButtonItem *)initWithCustomButton:(UIButton *)customButton;
 
 @end
