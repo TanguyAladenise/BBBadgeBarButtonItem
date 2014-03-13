@@ -15,7 +15,7 @@ static int const BBMinSize = 8;
 // Default offset for the badge
 
 // Change things here if your picto doesn't fit this settings
-static int const BBoriginX = 7;
+static int const BBoriginX = 17;
 static int const BBoriginY = -9;
 
 
@@ -80,6 +80,7 @@ static int const BBoriginY = -9;
     
     // Set the new value
     self.badge.text = self.badgeValue;
+    self.badge.clipsToBounds = YES;
     
     // When the value changes the badge could need to get bigger
     // Calculate expected size to fit new value

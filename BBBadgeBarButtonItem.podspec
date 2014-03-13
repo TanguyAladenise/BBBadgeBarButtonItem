@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "BBBadgeBarButtonItem"
-  s.version      = "1.0"
+  s.version      = "1.0.1"
   s.summary      = "Create a BarButtonItem with a badge on top"
   s.description  = <<-DESC
 Easily customizable. Your BarButtonItem can be any custom view you wish for. The badge on top can display any number or string of any size or length.
