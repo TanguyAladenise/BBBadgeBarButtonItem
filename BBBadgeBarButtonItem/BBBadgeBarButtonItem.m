@@ -131,7 +131,7 @@ static int const BBoriginY = -9;
     _badgeValue = badgeValue;
     
     // When changing the badge value check if we need to remove the badge
-    if ([badgeValue isEqualToString:@"0"] && self.shouldHideBadgeAtZero) {
+    if (!badgeValue || [badgeValue isEqualToString:@""] || ([badgeValue isEqualToString:@"0"] && self.shouldHideBadgeAtZero)) {
         [self removeBadge];
         
         return;
