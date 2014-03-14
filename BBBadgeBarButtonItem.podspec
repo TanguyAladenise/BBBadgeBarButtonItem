@@ -9,10 +9,9 @@ Pod::Spec.new do |s|
   s.screenshots      = "https://github.com/TanguyAladenise/BBBadgeBarButtonItem/blob/master/screenshot.png"
   s.license          = 'MIT'
   s.author           = { "TanguyAladenise" => "tanguy.aladenise@gmail.com" }
-  s.source           = { :git => "https://github.com/TanguyAladenise/BBBadgeBarButtonItem.git", :tag => '1.0' }
-
-  s.platform     = :ios, '5.0'
+  s.source           = { :git => "https://github.com/TanguyAladenise/BBBadgeBarButtonItem.git", :tag => '1.0', :commit => "0940f283852e9296897ec3526d938dc1f74e1787" }
+  s.source_files = 'BBBadgeBarButtonItem/BBBadgeBarButtonItem.{h,m}'
+  s.platform     = :ios, '6.0'
   s.requires_arc = true
 
-  s.source_files = 'BBBadgeBarButtonItem/BBBadgeBarButtonItem.{h,m}'
 end

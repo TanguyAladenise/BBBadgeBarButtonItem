@@ -48,7 +48,8 @@ static int const BBoriginY = -9;
     self.badgeFont      = [UIFont systemFontOfSize:12.0];
     self.shouldHideBadgeAtZero = YES;
     self.shouldAnimateBadge = YES;
-    self.badgeValue = @"caca";
+    // Avoids badge to be clipped when animating its scale
+    self.customView.clipsToBounds = NO;
 }
 
 #pragma mark - Utility methods
@@ -70,7 +71,7 @@ static int const BBoriginY = -9;
         CABasicAnimation * animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
         [animation setFromValue:[NSNumber numberWithFloat:1.5]];
         [animation setToValue:[NSNumber numberWithFloat:1]];
-        [animation setDuration:.5];
+        [animation setDuration:0.2];
         [animation setTimingFunction:[CAMediaTimingFunction functionWithControlPoints:.4 :1.3 :1 :1]];
         [self.badge.layer addAnimation:animation forKey:@"bounceAnimation"];
     }
