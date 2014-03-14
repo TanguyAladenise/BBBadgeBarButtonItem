@@ -10,12 +10,25 @@ Your BarButtonItem can be any custom view you wish for. The badge on top can dis
 How To Get Started
 ------------------
 
-It's quite easy, just add "BBBadgeBarButtonItem.h" and "BBBadgeBarButtonItem.m" into your xcodeproject. 
+#### Installation with CocoaPods
+
+Use the CocoaPods magic by adding in your podfile the following line :
+
+```ruby
+pod 'BBBadgeBarButtonItem'
+```
+
+#### Manually
+
+It's quite easy, just download and add "BBBadgeBarButtonItem.h" and "BBBadgeBarButtonItem.m" into your xcodeproject. 
 Don't forget to import the header file wherever you need it :
 
 ``` objective-c
 #import "BBBadgeBarButtonItem.h"
 ```
+
+Usage
+------------------
 
 Then, you only need to instantiate your beautiful BBBadgeBarButtonItem and add it to your navigation bar :
 
