@@ -7,17 +7,6 @@
 
 #import "BBBadgeBarButtonItem.h"
 
-// Default padding value for the badge
-static int const BBBadgeMargin = 6;
-// Minimum size badge to small
-static int const BBMinSize = 8;
-// Default offset for the badge
-
-// This are the default values for offseting the badge over the BarButtonItem you picked
-static int const BBoriginX = 7;
-static int const BBoriginY = -9;
-
-
 @interface BBBadgeBarButtonItem()
 
 // The badge displayed over the BarButtonItem
@@ -46,6 +35,10 @@ static int const BBoriginY = -9;
     self.badgeBGColor   = [UIColor redColor];
     self.badgeTextColor = [UIColor whiteColor];
     self.badgeFont      = [UIFont systemFontOfSize:12.0];
+    self.badgePadding   = 6;
+    self.badgeMinSize   = 8;
+    self.badgeOriginX   = 7;
+    self.badgeOriginY   = -9;
     self.shouldHideBadgeAtZero = YES;
     self.shouldAnimateBadge = YES;
     // Avoids badge to be clipped when animating its scale
@@ -63,11 +56,37 @@ static int const BBoriginY = -9;
     self.badge.font             = self.badgeFont;
 }
 
+- (void)updateBadgeFrame
+{
+    // When the value changes the badge could need to get bigger
+    // Calculate expected size to fit new value
+    // Use an intermediate label to get expected size thanks to sizeToFit
+    // We don't call sizeToFit on the true label to avoid bad display
+    UILabel *frameLabel = [self duplicateLabel:self.badge];
+    [frameLabel sizeToFit];
+    
+    CGSize expectedLabelSize = frameLabel.frame.size;
+    
+    // Make sure that for small value, the badge will be big enough
+    CGFloat minHeight = expectedLabelSize.height;
+    
+    // Using a const we make sure the badge respect the minimum size
+    minHeight = (minHeight < self.badgeMinSize) ? self.badgeMinSize : expectedLabelSize.height;
+    CGFloat minWidth = expectedLabelSize.width;
+    CGFloat padding = self.badgePadding;
+    
+    // Using const we make sure the badge doesn't get too smal
+    minWidth = (minWidth < minHeight) ? minHeight : expectedLabelSize.width;
+    self.badge.frame = CGRectMake(self.badgeOriginX, self.badgeOriginY, minWidth + padding, minHeight + padding);
+    self.badge.layer.cornerRadius = (minHeight + padding) / 2;
+    self.badge.layer.masksToBounds = YES;
+}
+
 // Handle the badge changing value
-- (void)updateBadgeValue
+- (void)updateBadgeValueAnimated:(BOOL)animated
 {
     // Bounce animation on badge if value changed and if animation authorized
-    if (self.shouldAnimateBadge && ![self.badge.text isEqualToString:self.badgeValue]) {
+    if (animated && self.shouldAnimateBadge && ![self.badge.text isEqualToString:self.badgeValue]) {
         CABasicAnimation * animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
         [animation setFromValue:[NSNumber numberWithFloat:1.5]];
         [animation setToValue:[NSNumber numberWithFloat:1]];
@@ -79,28 +98,11 @@ static int const BBoriginY = -9;
     // Set the new value
     self.badge.text = self.badgeValue;
     
-    // When the value changes the badge could need to get bigger
-    // Calculate expected size to fit new value
-    // Use an intermediate label to get expected size thanks to sizeToFit
-    // We don't call sizeToFit on the true label to avoid bad display
-    UILabel *frameLabel = [self duplicateLabel:self.badge];
-    [frameLabel sizeToFit];
-    CGSize expectedLabelSize = frameLabel.frame.size;
-    // Make sure that for small value, the badge will be big enough
-    float minHeight = expectedLabelSize.height;
-    // Using a const we make sure the badge respect the minimum size
-    minHeight = (minHeight < BBMinSize) ? BBMinSize : expectedLabelSize.height;
-    float minWidth = expectedLabelSize.width;
-    // Using const we make sure the badge doesn't get too smal
-    minWidth = (minWidth < minHeight) ? minHeight : expectedLabelSize.width;
-    
     // Animate the size modification if needed
-    [UIView animateWithDuration:0.2 animations:^{
-        self.badge.frame = CGRectMake(BBoriginX, BBoriginY, minWidth + BBBadgeMargin, minHeight + BBBadgeMargin);
-        self.badge.layer.cornerRadius   = (minHeight + BBBadgeMargin) / 2;
-        self.badge.layer.masksToBounds = YES;
+    NSTimeInterval duration = animated ? 0.2 : 0;
+    [UIView animateWithDuration:duration animations:^{
+        [self updateBadgeFrame];
     }];
-    
 }
 
 - (UILabel *)duplicateLabel:(UILabel *)labelToCopy
@@ -133,22 +135,19 @@ static int const BBoriginY = -9;
     // When changing the badge value check if we need to remove the badge
     if (!badgeValue || [badgeValue isEqualToString:@""] || ([badgeValue isEqualToString:@"0"] && self.shouldHideBadgeAtZero)) {
         [self removeBadge];
-
-        return;
-    }
-    
-    // Otwhersise check if badge already exists
-    else if(!self.badge) {
+    } else if (!self.badge) {
         // Create a new badge because not existing
-        self.badge                      = [[UILabel alloc] initWithFrame:CGRectMake(BBoriginX, BBoriginY, 20, 20)];
+        self.badge                      = [[UILabel alloc] initWithFrame:CGRectMake(self.badgeOriginX, self.badgeOriginY, 20, 20)];
         self.badge.textColor            = self.badgeTextColor;
         self.badge.backgroundColor      = self.badgeBGColor;
         self.badge.font                 = self.badgeFont;
         self.badge.textAlignment        = NSTextAlignmentCenter;
+        
         [self.customView addSubview:self.badge];
+        [self updateBadgeValueAnimated:NO];
+    } else {
+        [self updateBadgeValueAnimated:YES];
     }
-    
-    [self updateBadgeValue];
 }
 
 - (void)setBadgeBGColor:(UIColor *)badgeBGColor
@@ -175,6 +174,42 @@ static int const BBoriginY = -9;
     
     if (self.badge) {
         [self refreshBadge];
+    }
+}
+
+- (void)setBadgePadding:(CGFloat)badgePadding
+{
+    _badgePadding = badgePadding;
+    
+    if (self.badge) {
+        [self updateBadgeFrame];
+    }
+}
+
+- (void)setBadgeMinSize:(CGFloat)badgeMinSize
+{
+    _badgeMinSize = badgeMinSize;
+    
+    if (self.badge) {
+        [self updateBadgeFrame];
+    }
+}
+
+- (void)setBadgeOriginX:(CGFloat)badgeOriginX
+{
+    _badgeOriginX = badgeOriginX;
+    
+    if (self.badge) {
+        [self updateBadgeFrame];
+    }
+}
+
+- (void)setBadgeOriginY:(CGFloat)badgeOriginY
+{
+    _badgeOriginY = badgeOriginY;
+    
+    if (self.badge) {
+        [self updateBadgeFrame];
     }
 }
 
