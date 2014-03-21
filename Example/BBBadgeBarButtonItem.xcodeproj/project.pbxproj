@@ -23,7 +23,7 @@
 		5EC4E69E18A55C5300E06C09 /* BBBadgeBarButtonItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC4E69D18A55C5300E06C09 /* BBBadgeBarButtonItemTests.m */; };
 		5EC4E6AD18A55E9F00E06C09 /* ico-to-do-list.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EC4E6AB18A55E9F00E06C09 /* ico-to-do-list.png */; };
 		5EC4E6AE18A55E9F00E06C09 /* ico-to-do-list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EC4E6AC18A55E9F00E06C09 /* ico-to-do-list@2x.png */; };
-		5EC4E6B118A55EB600E06C09 /* BBBadgeBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC4E6B018A55EB600E06C09 /* BBBadgeBarButtonItem.m */; };
+		5EDA3ED018DC5BD100B3587F /* BBBadgeBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA3ECF18DC5BD100B3587F /* BBBadgeBarButtonItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +58,8 @@
 		5EC4E69D18A55C5300E06C09 /* BBBadgeBarButtonItemTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBBadgeBarButtonItemTests.m; sourceTree = "<group>"; };
 		5EC4E6AB18A55E9F00E06C09 /* ico-to-do-list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico-to-do-list.png"; sourceTree = "<group>"; };
 		5EC4E6AC18A55E9F00E06C09 /* ico-to-do-list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico-to-do-list@2x.png"; sourceTree = "<group>"; };
-		5EC4E6AF18A55EB600E06C09 /* BBBadgeBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBadgeBarButtonItem.h; sourceTree = "<group>"; };
-		5EC4E6B018A55EB600E06C09 /* BBBadgeBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBadgeBarButtonItem.m; sourceTree = "<group>"; };
+		5EDA3ECE18DC5BD100B3587F /* BBBadgeBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBadgeBarButtonItem.h; path = ../../BBBadgeBarButtonItem/BBBadgeBarButtonItem.h; sourceTree = "<group>"; };
+		5EDA3ECF18DC5BD100B3587F /* BBBadgeBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBadgeBarButtonItem.m; path = ../../BBBadgeBarButtonItem/BBBadgeBarButtonItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,8 +164,8 @@
 		5EC4E6B218A55ED600E06C09 /* BBBadgeBarButtonItem */ = {
 			isa = PBXGroup;
 			children = (
-				5EC4E6AF18A55EB600E06C09 /* BBBadgeBarButtonItem.h */,
-				5EC4E6B018A55EB600E06C09 /* BBBadgeBarButtonItem.m */,
+				5EDA3ECE18DC5BD100B3587F /* BBBadgeBarButtonItem.h */,
+				5EDA3ECF18DC5BD100B3587F /* BBBadgeBarButtonItem.m */,
 			);
 			name = BBBadgeBarButtonItem;
 			sourceTree = "<group>";
@@ -279,9 +279,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EDA3ED018DC5BD100B3587F /* BBBadgeBarButtonItem.m in Sources */,
 				5EC4E68918A55C5300E06C09 /* BBViewController.m in Sources */,
 				5EC4E68318A55C5300E06C09 /* BBAppDelegate.m in Sources */,
-				5EC4E6B118A55EB600E06C09 /* BBBadgeBarButtonItem.m in Sources */,
 				5EC4E67F18A55C5300E06C09 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
