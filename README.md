@@ -20,7 +20,7 @@ pod 'BBBadgeBarButtonItem'
 
 #### Manually
 
-It's quite easy, just download and add "BBBadgeBarButtonItem.h" and "BBBadgeBarButtonItem.m" into your xcodeproject. 
+It's quite easy, just download and add "BBBadgeBarButtonItem.h" and "BBBadgeBarButtonItem.m" into your xcodeproject.
 Don't forget to import the header file wherever you need it :
 
 ``` objective-c
@@ -49,7 +49,7 @@ If you want your BarButtonItem to handle touch event and click, use a UIButton a
 The icon or text displayed by the BarButtonItem is your custom view.
 
 
-Usefull properties
+Useful properties
 ---------------
 
 Take a look at BBBadgeBarButtonItem.h to see how easily and quickly you can customize the badge.
@@ -66,6 +66,14 @@ Remember that each time you change one of these value, the badge will directly b
 @property (nonatomic) UIColor *badgeTextColor;
 // Badge font
 @property (nonatomic) UIFont *badgeFont;
+
+// Padding value for the badge
+@property (nonatomic) CGFloat badgePadding;
+// Minimum size badge to small
+@property (nonatomic) CGFloat badgeMinSize;
+// Values for offseting the badge over the BarButtonItem you picked
+@property (nonatomic) CGFloat badgeOriginX;
+@property (nonatomic) CGFloat badgeOriginY;
 
 // In case of numbers, remove the badge when reaching zero
 @property BOOL shouldHideBadgeAtZero;
