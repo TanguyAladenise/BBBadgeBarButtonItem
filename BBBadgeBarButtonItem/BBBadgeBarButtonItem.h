@@ -17,6 +17,10 @@
 @property (nonatomic) UIColor *badgeBGColor;
 // Badge text color
 @property (nonatomic) UIColor *badgeTextColor;
+// Badge border color
+@property (nonatomic) UIColor *badgeBorderColor;
+// Badge border width
+@property (nonatomic) CGFloat badgeBorderWidth;
 // Badge font
 @property (nonatomic) UIFont *badgeFont;
 // Padding value for the badge
