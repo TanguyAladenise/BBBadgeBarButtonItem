@@ -107,7 +107,7 @@
 
 - (UILabel *)duplicateLabel:(UILabel *)labelToCopy
 {
-    UILabel *duplicateLabel = [[UILabel alloc] initWithFrame:labelToCopy.frame];
+    UILabel *duplicateLabel = [[[UILabel alloc] initWithFrame:labelToCopy.frame] autorelease];
     duplicateLabel.text = labelToCopy.text;
     duplicateLabel.font = labelToCopy.font;
 
@@ -137,7 +137,7 @@
         [self removeBadge];
     } else if (!self.badge) {
         // Create a new badge because not existing
-        self.badge                      = [[UILabel alloc] initWithFrame:CGRectMake(self.badgeOriginX, self.badgeOriginY, 20, 20)];
+        self.badge                      = [[[UILabel alloc] initWithFrame:CGRectMake(self.badgeOriginX, self.badgeOriginY, 20, 20)] autorelease];
         self.badge.textColor            = self.badgeTextColor;
         self.badge.backgroundColor      = self.badgeBGColor;
         self.badge.font                 = self.badgeFont;
