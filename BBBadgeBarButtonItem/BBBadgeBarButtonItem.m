@@ -29,6 +29,11 @@
     return self;
 }
 
+- (void) awakeFromNib {
+    [super awakeFromNib];
+    [self initializer];
+}
+
 - (void)initializer
 {
     // Default design initialization
@@ -41,8 +46,6 @@
     self.badgeOriginY   = -9;
     self.shouldHideBadgeAtZero = YES;
     self.shouldAnimateBadge = YES;
-    // Avoids badge to be clipped when animating its scale
-    self.customView.clipsToBounds = NO;
 }
 
 #pragma mark - Utility methods
@@ -79,7 +82,6 @@
     minWidth = (minWidth < minHeight) ? minHeight : expectedLabelSize.width;
     self.badge.frame = CGRectMake(self.badgeOriginX, self.badgeOriginY, minWidth + padding, minHeight + padding);
     self.badge.layer.cornerRadius = (minHeight + padding) / 2;
-    self.badge.layer.masksToBounds = YES;
 }
 
 // Handle the badge changing value
@@ -127,6 +129,13 @@
 
 #pragma mark - Setters
 
+- (void) setCustomView:(__kindof UIView *)customView {
+    [super setCustomView:customView];
+    
+    // Avoids badge to be clipped when animating its scale
+    self.customView.clipsToBounds = NO;
+}
+
 - (void)setBadgeValue:(NSString *)badgeValue
 {
     // Set new value
@@ -142,6 +151,7 @@
         self.badge.backgroundColor      = self.badgeBGColor;
         self.badge.font                 = self.badgeFont;
         self.badge.textAlignment        = NSTextAlignmentCenter;
+        self.badge.layer.masksToBounds  = YES;
 
         [self.customView addSubview:self.badge];
         [self updateBadgeValueAnimated:NO];
