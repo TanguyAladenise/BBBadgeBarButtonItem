@@ -79,7 +79,6 @@
     minWidth = (minWidth < minHeight) ? minHeight : expectedLabelSize.width;
     self.badge.frame = CGRectMake(self.badgeOriginX, self.badgeOriginY, minWidth + padding, minHeight + padding);
     self.badge.layer.cornerRadius = (minHeight + padding) / 2;
-    self.badge.layer.masksToBounds = YES;
 }
 
 // Handle the badge changing value
@@ -142,6 +141,7 @@
         self.badge.backgroundColor      = self.badgeBGColor;
         self.badge.font                 = self.badgeFont;
         self.badge.textAlignment        = NSTextAlignmentCenter;
+        self.badge.layer.masksToBounds  = YES;
 
         [self.customView addSubview:self.badge];
         [self updateBadgeValueAnimated:NO];
