@@ -41,6 +41,7 @@
     self.badgeOriginY   = -9;
     self.shouldHideBadgeAtZero = YES;
     self.shouldAnimateBadge = YES;
+    self.roundedCorners = YES;
     // Avoids badge to be clipped when animating its scale
     self.customView.clipsToBounds = NO;
 }
@@ -78,7 +79,7 @@
     // Using const we make sure the badge doesn't get too smal
     minWidth = (minWidth < minHeight) ? minHeight : expectedLabelSize.width;
     self.badge.frame = CGRectMake(self.badgeOriginX, self.badgeOriginY, minWidth + padding, minHeight + padding);
-    self.badge.layer.cornerRadius = (minHeight + padding) / 2;
+    if (self.roundedCorners) self.badge.layer.cornerRadius = (minHeight + padding) / 2;
     self.badge.layer.masksToBounds = YES;
 }
 
