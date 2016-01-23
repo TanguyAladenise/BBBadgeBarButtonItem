@@ -30,6 +30,8 @@
 @property BOOL shouldHideBadgeAtZero;
 // Badge has a bounce animation when value changes
 @property BOOL shouldAnimateBadge;
+// Badge should be animated the first time it is shown
+@property BOOL shouldAnimateInitialBadge;
 // The duration of the badge bounce animation when changing values
 @property CFTimeInterval animateBadgeDuration;
 

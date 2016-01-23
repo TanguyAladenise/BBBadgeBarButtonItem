@@ -41,6 +41,7 @@
     self.badgeOriginY   = -9;
     self.shouldHideBadgeAtZero = YES;
     self.shouldAnimateBadge = YES;
+    self.shouldAnimateInitialBadge = NO;
     self.animateBadgeDuration = 0.2;
     // Avoids badge to be clipped when animating its scale
     self.customView.clipsToBounds = NO;
@@ -145,7 +146,7 @@
         self.badge.textAlignment        = NSTextAlignmentCenter;
 
         [self.customView addSubview:self.badge];
-        [self updateBadgeValueAnimated:NO];
+        [self updateBadgeValueAnimated:self.shouldAnimateInitialBadge];
     } else {
         [self updateBadgeValueAnimated:YES];
     }
