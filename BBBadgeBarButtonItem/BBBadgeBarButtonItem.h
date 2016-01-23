@@ -30,6 +30,8 @@
 @property BOOL shouldHideBadgeAtZero;
 // Badge has a bounce animation when value changes
 @property BOOL shouldAnimateBadge;
+// The duration of the badge bounce animation when changing values
+@property CFTimeInterval animateBadgeDuration;
 
 - (BBBadgeBarButtonItem *)initWithCustomUIButton:(UIButton *)customButton;
 
