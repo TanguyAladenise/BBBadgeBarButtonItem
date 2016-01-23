@@ -41,6 +41,8 @@
     self.badgeOriginY   = -9;
     self.shouldHideBadgeAtZero = YES;
     self.shouldAnimateBadge = YES;
+    self.shouldAnimateInitialBadge = NO;
+    self.animateBadgeDuration = 0.2;
     // Avoids badge to be clipped when animating its scale
     self.customView.clipsToBounds = NO;
 }
@@ -90,7 +92,7 @@
         CABasicAnimation * animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
         [animation setFromValue:[NSNumber numberWithFloat:1.5]];
         [animation setToValue:[NSNumber numberWithFloat:1]];
-        [animation setDuration:0.2];
+        [animation setDuration:self.animateBadgeDuration];
         [animation setTimingFunction:[CAMediaTimingFunction functionWithControlPoints:.4 :1.3 :1 :1]];
         [self.badge.layer addAnimation:animation forKey:@"bounceAnimation"];
     }
@@ -144,7 +146,7 @@
         self.badge.textAlignment        = NSTextAlignmentCenter;
 
         [self.customView addSubview:self.badge];
-        [self updateBadgeValueAnimated:NO];
+        [self updateBadgeValueAnimated:self.shouldAnimateInitialBadge];
     } else {
         [self updateBadgeValueAnimated:YES];
     }
