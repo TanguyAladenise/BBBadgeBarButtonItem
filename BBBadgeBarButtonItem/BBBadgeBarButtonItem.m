@@ -125,6 +125,17 @@
     }];
 }
 
+#pragma mark - Getters
+
+// Returns userInteractionEnabled of badge or false if badge = nil
+- (BOOL)isBadgeUserInteractionEnabled
+{
+    if (self.badge) {
+        return self.badge.isUserInteractionEnabled;
+    }
+    return false;
+}
+
 #pragma mark - Setters
 
 - (void)setBadgeValue:(NSString *)badgeValue
@@ -210,6 +221,13 @@
 
     if (self.badge) {
         [self updateBadgeFrame];
+    }
+}
+
+- (void)setBadgeUserInteractionEnabled:(BOOL)badgeUserInteractionEnabled
+{
+    if (self.badge) {
+        self.badge.userInteractionEnabled = badgeUserInteractionEnabled;
     }
 }
 
