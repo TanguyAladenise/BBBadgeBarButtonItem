@@ -227,7 +227,7 @@
 - (void)setBadgeUserInteractionEnabled:(BOOL)badgeUserInteractionEnabled
 {
     if (self.badge) {
-        self.badge.userInteractionEnabled = badgeUserInteractionEnabled
+        self.badge.userInteractionEnabled = badgeUserInteractionEnabled;
     }
 }
 
