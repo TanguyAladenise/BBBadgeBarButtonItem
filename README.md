@@ -79,6 +79,9 @@ Remember that each time you change one of these value, the badge will directly b
 @property BOOL shouldHideBadgeAtZero;
 // Badge has a bounce animation when value changes
 @property BOOL shouldAnimateBadge;
+
+// Public accessor for the badge's view userInteractionEnabled property
+@property (nonatomic, assign, getter=isBadgeUserInteractionEnabled) BOOL badgeUserInteractionEnabled;
 ```
 
 You can also choose to turn off the little bounce animation triggered when changing the badge value or decide if 0 should be display or not.
