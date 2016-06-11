@@ -9,6 +9,9 @@
 
 @interface BBBadgeBarButtonItem : UIBarButtonItem
 
+// Constant to define `badgeCornerRadius` as automatic
+extern CGFloat const BadgeCornerRadiusAutomatic;
+
 // Each time you change one of the properties, the badge will refresh with your changes
 
 // Badge value to be display
@@ -21,6 +24,8 @@
 @property (nonatomic) UIFont *badgeFont;
 // Padding value for the badge
 @property (nonatomic) CGFloat badgePadding;
+// Corner radius for the badge. If the value is automatic, it rounds the badge.
+@property (nonatomic) CGFloat badgeCornerRadius;
 // Minimum size badge to small
 @property (nonatomic) CGFloat badgeMinSize;
 // Values for offseting the badge over the BarButtonItem you picked

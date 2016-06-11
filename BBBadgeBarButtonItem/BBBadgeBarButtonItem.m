@@ -16,6 +16,7 @@
 
 @implementation BBBadgeBarButtonItem
 
+CGFloat const BadgeCornerRadiusAutomatic = CGFLOAT_MAX;
 
 #pragma mark - Init methods
 
@@ -36,6 +37,7 @@
     self.badgeTextColor = [UIColor whiteColor];
     self.badgeFont      = [UIFont systemFontOfSize:12.0];
     self.badgePadding   = 6;
+    self.badgeCornerRadius = BadgeCornerRadiusAutomatic;
     self.badgeMinSize   = 8;
     self.badgeOriginX   = 7;
     self.badgeOriginY   = -9;
@@ -78,8 +80,13 @@
     // Using const we make sure the badge doesn't get too smal
     minWidth = (minWidth < minHeight) ? minHeight : expectedLabelSize.width;
     self.badge.frame = CGRectMake(self.badgeOriginX, self.badgeOriginY, minWidth + padding, minHeight + padding);
-    self.badge.layer.cornerRadius = (minHeight + padding) / 2;
     self.badge.layer.masksToBounds = YES;
+    
+    if (self.badgeCornerRadius == BadgeCornerRadiusAutomatic) {
+        self.badge.layer.cornerRadius = (minHeight + padding) / 2;
+    } else {
+        self.badge.layer.cornerRadius = self.badgeCornerRadius;
+    }
 }
 
 // Handle the badge changing value
@@ -181,6 +188,14 @@
 {
     _badgePadding = badgePadding;
 
+    if (self.badge) {
+        [self updateBadgeFrame];
+    }
+}
+
+- (void)setBadgeCornerRadius:(CGFloat)badgeCornerRadius {
+    _badgeCornerRadius = badgeCornerRadius;
+    
     if (self.badge) {
         [self updateBadgeFrame];
     }
