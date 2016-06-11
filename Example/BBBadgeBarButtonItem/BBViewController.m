@@ -89,4 +89,15 @@
     sender.selected = !sender.selected;
 }
 
+- (IBAction)changeCornerRadiusPressed:(UIButton *)sender {
+    BBBadgeBarButtonItem *barButton = (BBBadgeBarButtonItem *)self.navigationItem.leftBarButtonItem;
+    if (sender.selected) {
+        barButton.badgeCornerRadius = BadgeCornerRadiusAutomatic;
+    }
+    else {
+        barButton.badgeCornerRadius = 3.0;
+    }
+    sender.selected = !sender.selected;
+}
+
 @end
