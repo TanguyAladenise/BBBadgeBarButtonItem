@@ -34,6 +34,8 @@
     // Default design initialization
     self.badgeBGColor   = [UIColor redColor];
     self.badgeTextColor = [UIColor whiteColor];
+    self.badgeBorderColor = nil;
+    self.badgeBorderWidth = 0;
     self.badgeFont      = [UIFont systemFontOfSize:12.0];
     self.badgePadding   = 6;
     self.badgeMinSize   = 8;
@@ -51,9 +53,11 @@
 - (void)refreshBadge
 {
     // Change new attributes
-    self.badge.textColor        = self.badgeTextColor;
-    self.badge.backgroundColor  = self.badgeBGColor;
-    self.badge.font             = self.badgeFont;
+    self.badge.textColor         = self.badgeTextColor;
+    self.badge.backgroundColor   = self.badgeBGColor;
+    self.badge.font              = self.badgeFont;
+    self.badge.layer.borderColor = [self.badgeBorderColor CGColor];
+    self.badge.layer.borderWidth = self.badgeBorderWidth;
 }
 
 - (void)updateBadgeFrame
@@ -78,6 +82,8 @@
     // Using const we make sure the badge doesn't get too smal
     minWidth = (minWidth < minHeight) ? minHeight : expectedLabelSize.width;
     self.badge.frame = CGRectMake(self.badgeOriginX, self.badgeOriginY, minWidth + padding, minHeight + padding);
+    self.badge.layer.borderColor = [self.badgeBorderColor CGColor];
+    self.badge.layer.borderWidth = self.badgeBorderWidth;
     self.badge.layer.cornerRadius = (minHeight + padding) / 2;
     self.badge.layer.masksToBounds = YES;
 }
@@ -141,6 +147,8 @@
         self.badge.textColor            = self.badgeTextColor;
         self.badge.backgroundColor      = self.badgeBGColor;
         self.badge.font                 = self.badgeFont;
+        self.badge.layer.borderColor    = [self.badgeBorderColor CGColor];
+        self.badge.layer.borderWidth    = self.badgeBorderWidth;
         self.badge.textAlignment        = NSTextAlignmentCenter;
 
         [self.customView addSubview:self.badge];
@@ -163,6 +171,24 @@
 {
     _badgeTextColor = badgeTextColor;
 
+    if (self.badge) {
+        [self refreshBadge];
+    }
+}
+
+- (void)setBadgeBorderColor:(UIColor *)badgeBorderColor
+{
+    _badgeBorderColor = badgeBorderColor;
+    
+    if (self.badge) {
+        [self refreshBadge];
+    }
+}
+
+- (void)setBadgeBorderWidth:(CGFloat)badgeBorderWidth
+{
+    _badgeBorderWidth = badgeBorderWidth;
+    
     if (self.badge) {
         [self refreshBadge];
     }
